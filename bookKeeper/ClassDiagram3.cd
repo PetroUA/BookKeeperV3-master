@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="bookKeeper.WebApiConfig" Collapsed="true">
+    <Position X="12" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bookKeeper.IoC" Collapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAEAAAAAAABAABAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>IoC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bookKeeper.Startup" Collapsed="true">
+    <Position X="17" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bookKeeper.Areas.HelpPage.XmlDocumentationProvider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIEAAAAIBAEAQAAABIAAAAAAAAAAAAAAAAAAAAAAAkg=</HashCode>
+      <FileName>Areas\HelpPage\XmlDocumentationProvider.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bookKeeper.Controllers.AccountController" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACAAAAAAAAAIAAAAAAABAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bookKeeper.Controllers.HomeController" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAAAAAAACAAIAAAAAAAAAAAAAEEAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bookKeeper.Models.ApplicationDbContext" Collapsed="true">
+    <Position X="17.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bookKeeper.Providers.ApplicationOAuthProvider" Collapsed="true">
+    <Position X="19" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Providers\ApplicationOAuthProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="bookKeeper.Areas.HelpPage.ModelDescriptions.IModelDocumentationProvider" Collapsed="true">
+    <Position X="12" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="bookKeeper.Areas.HelpPage.SampleDirection" Collapsed="true">
+    <Position X="12" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\HelpPage\SampleGeneration\SampleDirection.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

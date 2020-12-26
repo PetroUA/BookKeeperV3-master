@@ -1,0 +1,86 @@
+﻿@model IEnumerable<bookKeeper_DTO.BookDto>
+
+<table class="table table-bordered">
+    <tr><th>Автор</th><th>Название</th><th>Ревью</th><th>Изменить</th><th>Удалить</th></tr>
+    @foreach (var book in Model)
+    {
+        <tr id="row_@book.BookId">
+            <td>@book.Author</td>
+            <td>@book.Title</td>
+            <td>@book.Review</td>
+            <td><button id="e_@book.BookId" onclick="startEdit(@book.BookId)">Изменить</button></td>
+            <td><button onclick="remove(@book.BookId)">Удалить</button></td>
+        </tr>
+    }
+    <tr id="row_add">
+        <td><input id="authorInput"/></td>
+        <td><input id="titleInput"/></td>
+        <td><input id="reviewInput"/></td>
+        <td><button onclick="add()">Добавить</button></td>
+        <td><button onclick="clearInputs()">Сбросить</button></td>
+    </tr>
+</table>
+
+<script>
+    var columns = ["Author", "Title", "Review"];
+
+    function startEdit(bookId) {
+        $(`#e_${bookId}`).text("Сохранить").attr("onclick", `endEdit(${bookId})`);
+        $(`#row_${bookId}`).children(":nth-child(-n+3)").each(function(index, element) {
+            var cellText = $(element).text();
+            $(element).text("").append($("<input>").val(cellText));
+        });
+    }
+
+    function endEdit(bookId) {
+        var bookInfo = { BookId: bookId };
+        $(`#row_${bookId}`).children(":nth-child(-n+3)").children("input").each(function (index, element) {
+            var cellText = $(element).val();
+            bookInfo[columns[index]] = cellText;
+        });
+
+        $.ajax({
+            type: "post",
+            url: "/Home/EditBook",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(bookInfo),
+            success: onSuccess,
+            error: onError
+        });
+    }
+
+    function remove(bookId) {
+        $.ajax({
+            type: "post",
+            url: "/Home/RemoveBook",
+            data: { bookId: bookId },
+            success: onSuccess,
+            error: onError
+        });
+    }
+
+    function add() {
+        $.ajax({
+            type: "post",
+            url: "/Home/AddBook",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ Title: $("#titleInput").val(), Author: $("#authorInput").val(), Review: $("#reviewInput").val(), BookId: 0 }),
+            success: onSuccess,
+            error: onError
+        });
+    }
+
+    function clearInputs() {
+        $("#titleInput").val("");
+        $("#authorInput").val("");
+        $("#reviewInput").val("");
+    }
+
+    function onSuccess() {
+        document.location.reload();
+    }
+
+    function onError(jqXHR) {
+        alert(jqXHR.responseText);
+    }
+</script>
